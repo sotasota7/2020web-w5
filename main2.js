@@ -7,10 +7,11 @@ function randomValueFromArray(array){
   return array[random];
 }
 
-let storyText = '気温摂取94 fahrenheit度で外は寒かった。:insertx: は出かけた。:inserty:に着いた。:insertz:。体重300 poundsの:insertx:は驚いていたが、Bobは驚かなかった。:inserty:にはよくあることだ。';
+let storyText = '気温 :inserta: 94 fahrenheit度で外は寒かった。:insertx: は出かけた。:inserty:に着いた。:insertz:。体重300 poundsの:insertx:は驚いていたが、Bobは驚かなかった。:inserty:にはよくあることだ。';
 let insertX = ['スヌーピー','ミッキーマウス','サンタクロース'];
 let insertY = ['ディズニーランド','千駄ヶ谷','津田塾大学'];
 let insertZ = ['雪が降っていた','混雑していた','晴れていた'];
+let insertA= ['摂氏','華氏'];
 
 randomize.addEventListener('click', result);
 
@@ -20,11 +21,14 @@ function result() {
   let xItem = randomValueFromArray(insertX);
   let yItem = randomValueFromArray(insertY);
   let zItem = randomValueFromArray(insertZ);
+  let aItem = randomValueFromArray(insertA);
 
   newStory = newStory.replace(':insertx:',xItem);
   newStory = newStory.replace(':insertx:',xItem);
   newStory = newStory.replace(':inserty:',yItem);
+  newStory = newStory.replace(':inserty:',yItem);
   newStory = newStory.replace(':insertz:',zItem);
+  newStory = newStory.replace(':inserta:',aItem);
 
   if(customName.value !== '') {
     const name = customName.value;
